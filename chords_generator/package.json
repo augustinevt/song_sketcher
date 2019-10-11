@@ -1,0 +1,41 @@
+{
+  "name": "chord-generator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "build/index.js",
+  "scripts": {
+    "dev": "watch 'npm run build' src",
+    "build": "babel src -d build",
+    "test": "jest",
+    "test:watch": "npm test -- --watch",
+    "prepare": "npm run build ",
+    "release": "np"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "keywords": [],
+  "author": "Augustine von Trapp",
+  "license": "ISC",
+  "bugs": {
+    "url": ""
+  },
+  "homepage": "",
+  "devDependencies": {
+    "@babel/cli": "^7.6.0",
+    "@babel/core": "^7.6.0",
+    "@babel/preset-env": "^7.6.0",
+    "jest": "^24.9.0",
+    "np": "^5.0.3",
+    "watch": "^1.0.2"
+  },
+  "dependencies": {
+    "@tonaljs/chord-dictionary": "^3.2.3",
+    "@tonaljs/note": "^3.2.4",
+    "tonal-chord": "^2.2.2",
+    "tonal-key": "^2.2.2",
+    "tone": "^13.8.25",
+    "uuid": "^3.3.3"
+  }
+}
