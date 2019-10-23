@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "watch 'npm run build' src",
     "build": "babel src -d build",
-    "test": "jest",
+    "test": "jest --passWithNoTests",
     "test:watch": "npm test -- --watch",
     "prepare": "npm run build ",
     "release": "np"
