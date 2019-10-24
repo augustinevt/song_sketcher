@@ -144,7 +144,7 @@ export default ({chordName, active, getKeyChords, changeChord, addChord, removeC
             {
               !changeOpen && !addOpen ?
                 <AddButtonWrapper>
-                  <AddButton onClick={()=>toggleAdd(true)}> A </AddButton>
+                  <AddButton onClick={()=> toggleAdd(true)}> A </AddButton>
                 </AddButtonWrapper>
               :
                 null
@@ -155,7 +155,7 @@ export default ({chordName, active, getKeyChords, changeChord, addChord, removeC
 
           <ButtonWrapper>
             <Button onClick={()=> removeChord(index)}> x </Button>
-            <Button onClick={()=>toggleChange(true)}> p </Button>
+            <Button onClick={()=> toggleChange(true)}> p </Button>
           </ButtonWrapper>
 
 

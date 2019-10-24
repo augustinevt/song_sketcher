@@ -1,12 +1,11 @@
 import React, {useState} from 'react';
 import styled from 'styled-components'
-// import logo from './logo.svg';
 import './App.css';
 
-import MusicUI from 'sequencer'
-import Khord from 'chord-generator'
+import MusicUI from 'chord-sketch-ui'
+import chordGen from 'chord-generator'
 
-const { chordGenerator, patternMaker } = Khord
+const {chordGenerator, patternMaker} = chordGen
 
 const {
   playWorkbench,
@@ -27,11 +26,9 @@ const {
 } = MusicUI
 
 const Workbench = styled.div`
-  /* border: solid; */
   width: 100%;
 `
 const Options = styled.div`
-  /* border: 1px solid red; */
   display: flex;
   width: 100%;
   flex-wrap: wrap;
@@ -40,21 +37,18 @@ const Options = styled.div`
 
 const Wrapper = styled.div`
   width: 40%;
-  /* border: solid; */
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 `
 
 const AppWrapper = styled.div`
-  /* border: solid; */
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 `
 
 function App() {
-
   const [chords, setChords] = useState([])
   const [key, setKey] = useState('D')
   const [mode, setMode] = useState('mixolydian')
@@ -71,23 +65,18 @@ function App() {
   return (
     <AppWrapper>
       <Wrapper>
-
-
         <Options>
-
           <ProgressionChordOptions
             keyVal={key}
             modeVal={mode}
             tempoVal={tempo}
-            onKeyChange={ value => setKey(value) }
-            onModeChange={ value => setMode(value)}
-            onTempoChange={ value => setTempo(parseInt(value))}
+            onKeyChange={value => setKey(value) }
+            onModeChange={value => setMode(value)}
+            onTempoChange={value => setTempo(parseInt(value))}
           />
-
           <ProgressionPatternOptions
             onChange={(pattern) => {setChordPattern(pattern)}}
           />
-
           <GenerateButton onSubmit={generateChords}/>
         </Options>
 
@@ -105,8 +94,8 @@ function App() {
               ({name, notes, index}) => {
                 const newChords = {...chords}
                 const newNotes = chordNotes(name)
-                newChords.chordNames.splice(index+1,0,name)
-                newChords.chordNotes.splice(index+1,0,newNotes)
+                newChords.chordNames.splice((index+1),0,name)
+                newChords.chordNotes.splice((index+1),0,newNotes)
                 setChords(newChords)
               }
             }
@@ -120,18 +109,13 @@ function App() {
             play={() => playWorkbench({
               sections: [chords],
               stateUpdater: (i) => {setActiveIndex(i)},
-              params: { pattern: chordPattern, tempo }
+              params: {pattern: chordPattern, tempo}
             })}
             activeIndex={activeIndex}
             stop={stopWorkbench}
           />
         </Workbench>
-
-
       </Wrapper>
-
-
-
     </AppWrapper>
   );
 }
