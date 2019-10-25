@@ -12,7 +12,7 @@ var _styledComponents = _interopRequireDefault(require("styled-components"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  /* border-radius: 10%; */\n  border: solid;\n  color: ", ";\n  background: ", ";\n  width: 40px;\n  height: 40px;\n"]);
+  var data = _taggedTemplateLiteral(["\n  border: solid;\n  color: ", ";\n  background: ", ";\n  width: 40px;\n  height: 40px;\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -34,14 +34,10 @@ var Cello = _styledComponents["default"].div(_templateObject(), function (_ref) 
 var Cell = function Cell(_ref3) {
   var cellVal = _ref3.cellVal,
       index = _ref3.index,
-      _onClick = _ref3.onClick,
       onDragOver = _ref3.onDragOver,
       mouseLeave = _ref3.mouseLeave,
       cellMouseDown = _ref3.cellMouseDown;
   return _react["default"].createElement(Cello, {
-    onClick: function onClick() {
-      _onClick(index, cellVal);
-    },
     onMouseDown: function onMouseDown() {
       cellMouseDown(index, cellVal);
     },

@@ -4,29 +4,24 @@ import styled from 'styled-components'
 const Wrapper = styled.div`
   display: flex;
   width: 100%;
-  /* border: solid; */
 `
 const Buttons = styled.div`
   display: flex;
   flex-wrap: wrap;
-  /* border: solid; */
 `
 const Display = styled.div`
   display: flex;
   margin: 20px;
-  /* border: solid; */
 `
 const ButtonWrapper = styled.div`
   display: flex;
   width: 100%;
   padding: 10px;
-  /* border: solid; */
 `
 
 import SymbolButton from './SymbolButton'
 
 export default ({handler}) => {
-
   const [root, setRoot] = useState("A")
   const [shift, setShift] = useState("#")
   const [quality, setQuality] = useState("sus")
@@ -72,15 +67,13 @@ export default ({handler}) => {
         </ButtonWrapper>
 
         <ButtonWrapper>
-          {
-            qualities.map(sym => <SymbolButton
-                active={ (sym !== quality)}
-                sym={sym}
-                handler={(sym) => {
-                  (sym !== quality) ? setQuality(sym) : setQuality("")
-                }}
-            />)
-          }
+          { qualities.map(sym => <SymbolButton
+            active={ (sym !== quality)}
+            sym={sym}
+            handler={(sym) => {
+              (sym !== quality) ? setQuality(sym) : setQuality("")
+            }}
+          />)}
         </ButtonWrapper>
 
         <ButtonWrapper>
@@ -97,16 +90,13 @@ export default ({handler}) => {
       </Buttons>
 
       <Display>
-
         <span>{root}</span>
         <span>{shift}</span>
         <span>{quality}</span>
         <span>{additive}</span>
-
       </Display>
 
       <button onClick={() => {handler(`${root}${shift}${quality}${additive}`)}}> Done </button>
-
     </Wrapper>
   )
 }

@@ -2,7 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Cello = styled.div`
-  /* border-radius: 10%; */
   border: solid;
   color: ${({cellVal}) => {
     if (cellVal === 2) return 'salmon'
@@ -18,10 +17,9 @@ const Cello = styled.div`
   height: 40px;
 `
 
-const Cell = ({cellVal, index, onClick, onDragOver, mouseLeave, cellMouseDown}) => {
+const Cell = ({cellVal, index, onDragOver, mouseLeave, cellMouseDown}) => {
   return (
     <Cello
-      onClick={()=>{onClick(index, cellVal)}}
       onMouseDown={()=>{cellMouseDown(index, cellVal)}}
       onMouseOver={()=>{onDragOver(index, cellVal)}}
       onMouseOut={()=>{mouseLeave(index, cellVal)}}

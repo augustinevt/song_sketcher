@@ -12,7 +12,7 @@ var _styledComponents = _interopRequireDefault(require("styled-components"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _templateObject2() {
-  var data = _taggedTemplateLiteral(["\n  /* width: 15%; */\n  margin: 1%;\n  font-size: 1.2rem;\n  text-decoration: ", ";\n"]);
+  var data = _taggedTemplateLiteral(["\n  margin: 1%;\n  font-size: 1.2rem;\n  text-decoration: ", ";\n"]);
 
   _templateObject2 = function _templateObject2() {
     return data;
@@ -46,11 +46,11 @@ var _default = function _default(_ref2) {
       currentValue = _ref2.currentValue,
       label = _ref2.label;
   var showLabel = false;
-  console.log(options);
   return _react["default"].createElement(Wrapper, null, showLabel && _react["default"].createElement("div", null, " ", label, " : ", currentValue, " "), options.map(function (_ref3) {
     var label = _ref3.label,
         value = _ref3.value;
     return _react["default"].createElement(Option, {
+      key: "".concat(label, "-").concat(value),
       active: currentValue === value,
       onClick: function onClick() {
         return onSelect(value);

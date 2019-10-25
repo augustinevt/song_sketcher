@@ -11,8 +11,6 @@ var _patternMaker = _interopRequireDefault(require("./patternMaker"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-_chordGenerator["default"].chordNotes('A#sus');
-
 var _default = {
   chordGenerator: _chordGenerator["default"],
   patternMaker: _patternMaker["default"]

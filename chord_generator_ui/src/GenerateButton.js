@@ -10,7 +10,6 @@ const Wrapper = styled.div`
 
 const Button = styled.div`
   display: flex;
-
   border: solid;
   padding: 10px;
   color: orange;
@@ -24,8 +23,11 @@ export default ({onSubmit}) => {
   return (
     <Wrapper>
       <Button onClick={() => onSubmit()}>
-      <svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" width="30px" height="30px"
-      	 viewBox="0 0 512 512">
+      <svg xmlns="http://www.w3.org/2000/svg"
+        xlink="http://www.w3.org/1999/xlink"
+        width="30px"
+        height="30px"
+      	viewBox="0 0 512 512">
 
       	<g>
       		<path d="M400.268,175.599c-1.399-3.004-4.412-4.932-7.731-4.932h-101.12l99.797-157.568c1.664-2.628,1.766-5.956,0.265-8.678

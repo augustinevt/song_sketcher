@@ -1,4 +1,3 @@
-// import * as Tonal from 'tonal';
 import * as Key from 'tonal-key';
 import * as Chord from 'tonal-chord';
 
@@ -7,15 +6,10 @@ import { simplify } from "@tonaljs/note";
 
 import uuid from 'uuid';
 
-// const progBank = [
-//   ["I","V","vi","IV"],
-//   ["V","vi","IV","I"],
-//   ["vi","IV","I","V"],
-// ];
 const progBank = [
   ["I","V","vi","IV"],
   ["V","vi","IV"],
-  ["vi","IV","I","V","I"],
+  ["vi","IV","I","V","V"],
 ];
 
 export const getAllChords = ({key, mode, theme}) => {
@@ -32,7 +26,7 @@ export const getAllChords = ({key, mode, theme}) => {
   return returnObject;
 }
 
-export const getRandomProgression = (({key, mode, theme}) => {
+export const getRandomProgression = (({key, mode}) => {
   const randProgI = Math.floor(Math.random() * progBank.length);
 
   const chordNames = Key.chords(
@@ -41,7 +35,7 @@ export const getRandomProgression = (({key, mode, theme}) => {
   );
 
   const chordNotes = chordNames.map((chord) => {
-    return Chord.notes(chord).map( note => note + '4');
+    return Chord.notes(chord).map(note => note + '4');
   });
 
   return {
@@ -51,24 +45,12 @@ export const getRandomProgression = (({key, mode, theme}) => {
     theoryAttrs: {
       key,
       mode,
-      theme,
-      measures: 4
     }
   }
 });
-
-const getChords = () => entries()
 
 export default {
   getRandomProgression,
   getAllChords,
   chordNotes: (chord) => Chord.notes(chord).map( note => simplify(note) + '4'),
-  getChords
 }
-
-
-
-export const notes = () => Chord.notes('Dm');
-
-
-
