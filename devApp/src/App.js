@@ -3,15 +3,9 @@ import styled from 'styled-components'
 import './App.css';
 
 import MusicUI from 'chord-sketch-ui'
-<<<<<<< HEAD
-import chordGen from 'chord-generator'
-
-const {chordGenerator, patternMaker} = chordGen
-=======
 import ChordGen from 'chord-generator'
 
 const { chordGenerator, patternMaker } = ChordGen
->>>>>>> oct_24_clean
 
 const {
   playWorkbench,
@@ -43,10 +37,7 @@ const Options = styled.div`
 
 const Wrapper = styled.div`
   width: 40%;
-<<<<<<< HEAD
-=======
   padding: 4% 0%;
->>>>>>> oct_24_clean
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -58,15 +49,12 @@ const AppWrapper = styled.div`
   justify-content: center;
 `
 
-<<<<<<< HEAD
-=======
 const AppVersionTag = styled.div`
   position: absolute;
   top: 0px;
   left: 20px;
 `
 
->>>>>>> oct_24_clean
 function App() {
   const [chords, setChords] = useState([])
   const [key, setKey] = useState('D')
