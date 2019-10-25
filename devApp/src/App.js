@@ -3,7 +3,7 @@ import styled from 'styled-components'
 // import logo from './logo.svg';
 import './App.css';
 
-import MusicUI from 'sequencer'
+import MusicUI from 'chord-sketch-ui'
 import Khord from 'chord-generator'
 
 const { chordGenerator, patternMaker } = Khord
@@ -85,7 +85,7 @@ function App() {
           />
 
           <ProgressionPatternOptions
-            onChange={(pattern) => {setChordPattern(pattern)}}
+            onChange={(pattern) => { console.log("HO PATTER",[...pattern]);setChordPattern(pattern)}}
           />
 
           <GenerateButton onSubmit={generateChords}/>

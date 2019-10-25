@@ -10,7 +10,7 @@ const Cello = styled.div`
     else return 'grey'
   }};
   background: ${({cellVal}) => {
-    if (cellVal === 2) return 'salmon'
+    if (cellVal === 2) return 'blue'
     else if (cellVal === 1) return 'orange'
     else return 'white'
   }};

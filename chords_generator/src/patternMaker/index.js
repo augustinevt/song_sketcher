@@ -25,6 +25,7 @@ export const playWorkbench = ({sections, stateUpdater, params}) => {
 
   const {pattern, measureCount, tempo} = params;
 
+  console.log('pattern', pattern)
   const newPattern = [];
 
   chords.forEach((measure, i) => {
@@ -43,7 +44,6 @@ export const playWorkbench = ({sections, stateUpdater, params}) => {
 
   // should I make a different pattern thing? why is the performace so poor?
 
-  console.log(newPattern)
 
   const part = new Tone.Part((time, value) => {
       stateUpdater(value.index)

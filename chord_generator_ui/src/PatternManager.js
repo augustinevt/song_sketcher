@@ -20,8 +20,7 @@ class PatternManager extends React.Component {
       isDrag: false,
       id: 'vow',
       val: '',
-      // cells: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
-      cells: [0,1,0,1,0,2,2,0]
+      cells: [0,0,0,0,0,0,0,0]
     };
 
     this.onClick = this.onClick.bind(this);

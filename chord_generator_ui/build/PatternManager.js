@@ -75,8 +75,7 @@ function (_React$Component) {
       isDrag: false,
       id: 'vow',
       val: '',
-      // cells: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
-      cells: [0, 1, 0, 1, 0, 2, 2, 0]
+      cells: [0, 0, 0, 0, 0, 0, 0, 0]
     };
     _this.onClick = _this.onClick.bind(_assertThisInitialized(_this));
     _this.onDragOver = _this.onDragOver.bind(_assertThisInitialized(_this));

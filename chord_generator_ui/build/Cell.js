@@ -28,7 +28,7 @@ var Cello = _styledComponents["default"].div(_templateObject(), function (_ref) 
   if (cellVal === 2) return 'salmon';else if (cellVal === 1) return 'orange';else return 'grey';
 }, function (_ref2) {
   var cellVal = _ref2.cellVal;
-  if (cellVal === 2) return 'salmon';else if (cellVal === 1) return 'orange';else return 'white';
+  if (cellVal === 2) return 'blue';else if (cellVal === 1) return 'orange';else return 'white';
 });
 
 var Cell = function Cell(_ref3) {

@@ -37,6 +37,7 @@ var playWorkbench = function playWorkbench(_ref) {
   var pattern = params.pattern,
       measureCount = params.measureCount,
       tempo = params.tempo;
+  console.log('pattern', pattern);
   var newPattern = [];
   chords.forEach(function (measure, i) {
     pattern.forEach(function (event) {
@@ -50,7 +51,6 @@ var playWorkbench = function playWorkbench(_ref) {
     });
   }); // should I make a different pattern thing? why is the performace so poor?
 
-  console.log(newPattern);
   var part = new _tone["default"].Part(function (time, value) {
     stateUpdater(value.index);
     synth.triggerAttackRelease(value.notes, value.duration, time);
