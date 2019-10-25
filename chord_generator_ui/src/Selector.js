@@ -8,18 +8,13 @@ const Wrapper = styled.div`
 `
 
 const Option = styled.div`
-  /* width: 15%; */
   margin: 1%;
   font-size: 1.2rem;
   text-decoration: ${({active}) => active ? 'underline' : 'none'};
 `
 
 export default ({options, onSelect, currentValue, label}) => {
-
   const showLabel = false
-
-
-  console.log(options)
   return (
     <Wrapper>
       {
@@ -27,7 +22,12 @@ export default ({options, onSelect, currentValue, label}) => {
       }
 
       {
-        options.map(({label, value}) => <Option active={currentValue === value} onClick={() => onSelect(value)}>{label}</Option>)
+        options.map(({label, value}) => <Option
+          key={`${label}-${value}`}
+          active={currentValue === value}
+          onClick={() => onSelect(value)}>
+            {label}
+          </Option>)
       }
     </Wrapper>
   )

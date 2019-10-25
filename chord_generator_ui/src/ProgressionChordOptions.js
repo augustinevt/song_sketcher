@@ -3,19 +3,12 @@ import styled from 'styled-components'
 
 import Selector from './Selector'
 
-const Button = styled.button`
-
-`
-
-const Select = styled.select`
-  /* border: solid; */
-  /* width: 100%; */
-`
+const Button = styled.button``
+const Select = styled.select``
 
 const Wrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
-  /* justify-content: center; */
   width: 100%;
 `
 
@@ -24,14 +17,11 @@ const SelectTabLabels = styled.div`
   display: flex;
   justify-content: space-between;
   width: 100%;
-  /* border: solid; */
   margin-bottom: 30px;
   font-size: 1.3rem;
 `
 
-const SelectTabLabel = styled.div`
-
-`
+const SelectTabLabel = styled.div``
 
 const SelectCurrVal = styled.span`
   text-decoration: underline;
@@ -42,7 +32,16 @@ const SelectTabBody = styled.div`
   height: 100px;
 `
 
-export default ({onKeyChange, onModeChange, onTempoChange, onSubmit, keyVal, modeVal, tempoVal}) => {
+export default (props) => {
+  const {
+    onKeyChange,
+    onModeChange,
+    onTempoChange,
+    onSubmit,
+    keyVal,
+    modeVal,
+    tempoVal
+  } = props
 
   const [select, setSelect] = useState(1)
 

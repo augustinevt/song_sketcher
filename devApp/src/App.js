@@ -1,12 +1,11 @@
 import React, {useState} from 'react';
 import styled from 'styled-components'
-// import logo from './logo.svg';
 import './App.css';
 
 import MusicUI from 'chord-sketch-ui'
-import Khord from 'chord-generator'
+import ChordGen from 'chord-generator'
 
-const { chordGenerator, patternMaker } = Khord
+const { chordGenerator, patternMaker } = ChordGen
 
 const {
   playWorkbench,
@@ -27,11 +26,9 @@ const {
 } = MusicUI
 
 const Workbench = styled.div`
-  /* border: solid; */
   width: 100%;
 `
 const Options = styled.div`
-  /* border: 1px solid red; */
   display: flex;
   width: 100%;
   flex-wrap: wrap;
@@ -40,21 +37,25 @@ const Options = styled.div`
 
 const Wrapper = styled.div`
   width: 40%;
-  /* border: solid; */
+  padding: 4% 0%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 `
 
 const AppWrapper = styled.div`
-  /* border: solid; */
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 `
 
-function App() {
+const AppVersionTag = styled.div`
+  position: absolute;
+  top: 0px;
+  left: 20px;
+`
 
+function App() {
   const [chords, setChords] = useState([])
   const [key, setKey] = useState('D')
   const [mode, setMode] = useState('mixolydian')
@@ -63,18 +64,16 @@ function App() {
   const [activeIndex, setActiveIndex] = useState(0)
 
   const generateChords = () => {
-    setChords(getRandomProgression(
-      { key, mode, tempo, theme: null }
-    ))
+    setChords(getRandomProgression({key, mode}))
   }
 
   return (
     <AppWrapper>
+      <AppVersionTag>
+        Alpha 1.0.3
+      </AppVersionTag>
       <Wrapper>
-
-
         <Options>
-
           <ProgressionChordOptions
             keyVal={key}
             modeVal={mode}
@@ -85,7 +84,7 @@ function App() {
           />
 
           <ProgressionPatternOptions
-            onChange={(pattern) => { console.log("HO PATTER",[...pattern]);setChordPattern(pattern)}}
+            onChange={(pattern) => {setChordPattern(pattern)}}
           />
 
           <GenerateButton onSubmit={generateChords}/>
@@ -126,12 +125,7 @@ function App() {
             stop={stopWorkbench}
           />
         </Workbench>
-
-
       </Wrapper>
-
-
-
     </AppWrapper>
   );
 }

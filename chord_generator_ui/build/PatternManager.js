@@ -77,10 +77,8 @@ function (_React$Component) {
       val: '',
       cells: [0, 0, 0, 0, 0, 0, 0, 0]
     };
-    _this.onClick = _this.onClick.bind(_assertThisInitialized(_this));
     _this.onDragOver = _this.onDragOver.bind(_assertThisInitialized(_this));
     _this.cellMouseDown = _this.cellMouseDown.bind(_assertThisInitialized(_this));
-    _this.mouseDown = _this.mouseDown.bind(_assertThisInitialized(_this));
     _this.mouseUp = _this.mouseUp.bind(_assertThisInitialized(_this));
     _this.mouseLeave = _this.mouseLeave.bind(_assertThisInitialized(_this));
     return _this;
@@ -89,7 +87,7 @@ function (_React$Component) {
   _createClass(PatternManager, [{
     key: "onDragOver",
     value: function onDragOver(i, val) {
-      if (this.state.isDrag && this.mouseDown) {
+      if (this.state.isDrag && this.state.mouseDown) {
         var newCells = _toConsumableArray(this.state.cells);
 
         newCells[i] = val === 1 || val === 0 ? 2 : 0;
@@ -101,7 +99,6 @@ function (_React$Component) {
   }, {
     key: "cellMouseDown",
     value: function cellMouseDown(i, val) {
-      console.log('cellMouseDown');
       this.setState(_objectSpread({}, this.state, {
         mouseDown: true,
         val: val,
@@ -109,14 +106,13 @@ function (_React$Component) {
       }));
     }
   }, {
-    key: "mouseDown",
-    value: function mouseDown(i, val) {
-      console.log('MouseDown');
-    }
-  }, {
     key: "mouseUp",
     value: function mouseUp() {
       var newCells = _toConsumableArray(this.state.cells);
+
+      var exportVal = [];
+      var measures = 4;
+      var beatsPerMeasure = 4;
 
       if (!this.state.isDrag) {
         newCells[this.state.id] = this.state.val === 2 || this.state.val === 0 ? 1 : 0;
@@ -130,11 +126,6 @@ function (_React$Component) {
           isDrag: false
         }));
       }
-
-      var exportVal = [];
-      console.log(exportVal);
-      var measures = 4;
-      var beatsPerMeasure = 4;
 
       for (var i = 0; i < newCells.length; i++) {
         if (newCells[i] === 2) {
@@ -175,24 +166,18 @@ function (_React$Component) {
       }
     }
   }, {
-    key: "onClick",
-    value: function onClick(i) {}
-  }, {
     key: "render",
     value: function render() {
       var _this2 = this;
 
-      var jsx3 = this.state.mouseDown ? _react["default"].createElement("div", null, " mY ") : _react["default"].createElement("div", null, " mN ");
-      var jsx4 = this.state.isDrag ? _react["default"].createElement("div", null, " dY ") : _react["default"].createElement("div", null, " dN ");
       return _react["default"].createElement(Wrapper, {
         onMouseUp: this.mouseUp
       }, this.state.cells.map(function (cellVal, i) {
         return _react["default"].createElement(_Cell["default"], {
+          key: "cell-".concat(i),
           cellVal: cellVal,
           index: i,
-          onClick: _this2.onClick,
-          onDragOver: _this2.onDragOver // mouseDown={this.state.mouseDown}
-          ,
+          onDragOver: _this2.onDragOver,
           mouseLeave: _this2.mouseLeave,
           cellMouseDown: _this2.cellMouseDown
         });

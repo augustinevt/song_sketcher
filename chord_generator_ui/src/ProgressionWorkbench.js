@@ -46,9 +46,18 @@ const StopButton = styled.div`
   }
 `
 
-export default ({chords, activeIndex, play, stop, getKeyChords, changeChord, removeChord, addChord}) => {
+export default (props) => {
+  const {
+    chords,
+    activeIndex,
+    play,
+    stop,
+    getKeyChords,
+    changeChord,
+    removeChord,
+    addChord
+  } = props
 
-  console.log('->',activeIndex)
   return (
     <Wrapper>
 
@@ -86,6 +95,7 @@ export default ({chords, activeIndex, play, stop, getKeyChords, changeChord, rem
         (!chords || chords.length === 0) ?
           <span> No Current Chords </span> :
           chords.map((chordName, i) => <ChordCard
+            key={`chord-${i}`}
             index={i}
             active={(activeIndex === i)}
             changeChord={changeChord}
@@ -96,8 +106,6 @@ export default ({chords, activeIndex, play, stop, getKeyChords, changeChord, rem
           />
         )
       }
-
-
     </Wrapper>
   )
 }

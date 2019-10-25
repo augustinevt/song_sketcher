@@ -26,7 +26,7 @@ function _iterableToArrayLimit(arr, i) { if (!(Symbol.iterator in Object(arr) ||
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 function _templateObject4() {
-  var data = _taggedTemplateLiteral(["\n  display: flex;\n  width: 100%;\n  padding: 10px;\n  /* border: solid; */\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: flex;\n  width: 100%;\n  padding: 10px;\n"]);
 
   _templateObject4 = function _templateObject4() {
     return data;
@@ -36,7 +36,7 @@ function _templateObject4() {
 }
 
 function _templateObject3() {
-  var data = _taggedTemplateLiteral(["\n  display: flex;\n  margin: 20px;\n  /* border: solid; */\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: flex;\n  margin: 20px;\n"]);
 
   _templateObject3 = function _templateObject3() {
     return data;
@@ -46,7 +46,7 @@ function _templateObject3() {
 }
 
 function _templateObject2() {
-  var data = _taggedTemplateLiteral(["\n  display: flex;\n  flex-wrap: wrap;\n  /* border: solid; */\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: flex;\n  flex-wrap: wrap;\n"]);
 
   _templateObject2 = function _templateObject2() {
     return data;
@@ -56,7 +56,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  display: flex;\n  width: 100%;\n  /* border: solid; */\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: flex;\n  width: 100%;\n"]);
 
   _templateObject = function _templateObject() {
     return data;

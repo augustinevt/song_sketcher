@@ -46,7 +46,7 @@ function _templateObject6() {
 }
 
 function _templateObject5() {
-  var data = _taggedTemplateLiteral(["\n\n"]);
+  var data = _taggedTemplateLiteral([""]);
 
   _templateObject5 = function _templateObject5() {
     return data;
@@ -56,7 +56,7 @@ function _templateObject5() {
 }
 
 function _templateObject4() {
-  var data = _taggedTemplateLiteral(["\n  flex-wrap: nowrap;\n  display: flex;\n  justify-content: space-between;\n  width: 100%;\n  /* border: solid; */\n  margin-bottom: 30px;\n  font-size: 1.3rem;\n"]);
+  var data = _taggedTemplateLiteral(["\n  flex-wrap: nowrap;\n  display: flex;\n  justify-content: space-between;\n  width: 100%;\n  margin-bottom: 30px;\n  font-size: 1.3rem;\n"]);
 
   _templateObject4 = function _templateObject4() {
     return data;
@@ -66,7 +66,7 @@ function _templateObject4() {
 }
 
 function _templateObject3() {
-  var data = _taggedTemplateLiteral(["\n  display: flex;\n  flex-wrap: wrap;\n  /* justify-content: center; */\n  width: 100%;\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: flex;\n  flex-wrap: wrap;\n  width: 100%;\n"]);
 
   _templateObject3 = function _templateObject3() {
     return data;
@@ -76,7 +76,7 @@ function _templateObject3() {
 }
 
 function _templateObject2() {
-  var data = _taggedTemplateLiteral(["\n  /* border: solid; */\n  /* width: 100%; */\n"]);
+  var data = _taggedTemplateLiteral([""]);
 
   _templateObject2 = function _templateObject2() {
     return data;
@@ -86,7 +86,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n\n"]);
+  var data = _taggedTemplateLiteral([""]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -111,14 +111,14 @@ var SelectCurrVal = _styledComponents["default"].span(_templateObject6());
 
 var SelectTabBody = _styledComponents["default"].div(_templateObject7());
 
-var _default = function _default(_ref) {
-  var onKeyChange = _ref.onKeyChange,
-      onModeChange = _ref.onModeChange,
-      onTempoChange = _ref.onTempoChange,
-      onSubmit = _ref.onSubmit,
-      keyVal = _ref.keyVal,
-      modeVal = _ref.modeVal,
-      tempoVal = _ref.tempoVal;
+var _default = function _default(props) {
+  var onKeyChange = props.onKeyChange,
+      onModeChange = props.onModeChange,
+      onTempoChange = props.onTempoChange,
+      onSubmit = props.onSubmit,
+      keyVal = props.keyVal,
+      modeVal = props.modeVal,
+      tempoVal = props.tempoVal;
 
   var _useState = (0, _react.useState)(1),
       _useState2 = _slicedToArray(_useState, 2),

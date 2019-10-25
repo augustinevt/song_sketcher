@@ -6,7 +6,6 @@ import ChordBuilder from './ChordBuilder'
 const Wrapper = styled.div`
   width: 100%;
   margin-bottom: 10px;
-  /* border: 1px solid blue; */
   display: flex;
   flex-wrap: no-wrap;
   position: relative;
@@ -22,6 +21,7 @@ const RemCol = styled.div`
   flex-wrap: wrap;
   width: 20px;
 `
+
 const ChordCol = styled.div`
   display: flex;
   /* border: solid; */
@@ -46,7 +46,6 @@ const Button = styled.div`
 `
 
 const AddButton = styled.div`
-  /* position: absolute; */
   border: 1px solid orange;
   width: 20px;
   height: 20px;
@@ -60,16 +59,11 @@ const AddButtonWrapper = styled.div`
   display: flex;
   justify-content: flex-end;
   width: 100%;
-
-  /* padding-right: 20px; */
-  /* border: solid; */
 `
 
 const ButtonWrapper = styled.div`
-
   position: absolute;
   right: -25px;
-  /* padding-left: 5px; */
 `
 
 const Card = styled.div`
@@ -84,7 +78,6 @@ const Card = styled.div`
 `
 
 export default ({chordName, active, getKeyChords, changeChord, addChord, removeChord, index}) => {
-
   const [changeOpen, toggleChange] = useState(false)
   const [addOpen, toggleAdd] = useState(false)
   const [inKeyOnly, toggleInKeyOnly] = useState(true)
@@ -106,60 +99,50 @@ export default ({chordName, active, getKeyChords, changeChord, addChord, removeC
     })
 
   } else {
-
-      const handler = (chordName) => {
-        const params = {name: chordName, index }
-        toggleChange(false)
-        toggleAdd(false)
-        changeOpen ? changeChord(params) : addChord(params)
-      }
-
-      chordMenu = <ChordBuilder handler={handler} />
+    const handler = (chordName) => {
+      const params = {name: chordName, index }
+      toggleChange(false)
+      toggleAdd(false)
+      changeOpen ? changeChord(params) : addChord(params)
+    }
+    chordMenu = <ChordBuilder handler={handler} />
   }
 
   return (
     <Wrapper>
-
-        <ChordCol>
-          <Row>
-
-            <Card active={active}>
-              {chordName}
-
-              {
-                !changeOpen && !addOpen ?
-                  null
-                :
-                  <ChordMenu>
-                    <Button onClick={()=> toggleInKeyOnly(!inKeyOnly)}> In Key only </Button>
-                    {chordMenu}
-                  </ChordMenu>
-              }
-
-            </Card>
-
-          </Row>
-
-          <Row>
+      <ChordCol>
+        <Row>
+          <Card active={active}>
+            {chordName}
             {
               !changeOpen && !addOpen ?
-                <AddButtonWrapper>
-                  <AddButton onClick={()=>toggleAdd(true)}> A </AddButton>
-                </AddButtonWrapper>
-              :
-                null
+                null :
+                <ChordMenu>
+                  <Button
+                    onClick={()=> toggleInKeyOnly(!inKeyOnly)}>
+                    In Key only
+                  </Button>
+                  {chordMenu}
+                </ChordMenu>
             }
-          </Row>
-        </ChordCol>
+          </Card>
+        </Row>
 
+        <Row>
+          {
+            !changeOpen && !addOpen ?
+              <AddButtonWrapper>
+                <AddButton onClick={()=>toggleAdd(true)}> A </AddButton>
+              </AddButtonWrapper> :
+              null
+          }
+        </Row>
+      </ChordCol>
 
-          <ButtonWrapper>
-            <Button onClick={()=> removeChord(index)}> x </Button>
-            <Button onClick={()=>toggleChange(true)}> p </Button>
-          </ButtonWrapper>
-
-
-
+      <ButtonWrapper>
+        <Button onClick={()=> removeChord(index)}> x </Button>
+        <Button onClick={()=>toggleChange(true)}> p </Button>
+      </ButtonWrapper>
     </Wrapper>
   )
 }

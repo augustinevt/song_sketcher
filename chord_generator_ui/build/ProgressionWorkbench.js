@@ -63,16 +63,15 @@ var PlayButton = _styledComponents["default"].div(_templateObject3());
 
 var StopButton = _styledComponents["default"].div(_templateObject4());
 
-var _default = function _default(_ref) {
-  var chords = _ref.chords,
-      activeIndex = _ref.activeIndex,
-      play = _ref.play,
-      stop = _ref.stop,
-      getKeyChords = _ref.getKeyChords,
-      changeChord = _ref.changeChord,
-      removeChord = _ref.removeChord,
-      addChord = _ref.addChord;
-  console.log('->', activeIndex);
+var _default = function _default(props) {
+  var chords = props.chords,
+      activeIndex = props.activeIndex,
+      play = props.play,
+      stop = props.stop,
+      getKeyChords = props.getKeyChords,
+      changeChord = props.changeChord,
+      removeChord = props.removeChord,
+      addChord = props.addChord;
   return _react["default"].createElement(Wrapper, null, _react["default"].createElement(ButtonRow, null, _react["default"].createElement(PlayButton, {
     onClick: function onClick() {
       return play();
@@ -102,6 +101,7 @@ var _default = function _default(_ref) {
     d: "M35,0H1C0.448,0,0,0.447,0,1v34c0,0.553,0.448,1,1,1h34c0.552,0,1-0.447,1-1V1C36,0.447,35.552,0,35,0z"
   })))), !chords || chords.length === 0 ? _react["default"].createElement("span", null, " No Current Chords ") : chords.map(function (chordName, i) {
     return _react["default"].createElement(_ChordCard["default"], {
+      key: "chord-".concat(i),
       index: i,
       active: activeIndex === i,
       changeChord: changeChord,

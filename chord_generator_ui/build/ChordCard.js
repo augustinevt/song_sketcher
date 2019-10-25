@@ -36,7 +36,7 @@ function _templateObject10() {
 }
 
 function _templateObject9() {
-  var data = _taggedTemplateLiteral(["\n\n  position: absolute;\n  right: -25px;\n  /* padding-left: 5px; */\n"]);
+  var data = _taggedTemplateLiteral(["\n  position: absolute;\n  right: -25px;\n"]);
 
   _templateObject9 = function _templateObject9() {
     return data;
@@ -46,7 +46,7 @@ function _templateObject9() {
 }
 
 function _templateObject8() {
-  var data = _taggedTemplateLiteral(["\n  display: flex;\n  justify-content: flex-end;\n  width: 100%;\n\n  /* padding-right: 20px; */\n  /* border: solid; */\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: flex;\n  justify-content: flex-end;\n  width: 100%;\n"]);
 
   _templateObject8 = function _templateObject8() {
     return data;
@@ -56,7 +56,7 @@ function _templateObject8() {
 }
 
 function _templateObject7() {
-  var data = _taggedTemplateLiteral(["\n  /* position: absolute; */\n  border: 1px solid orange;\n  width: 20px;\n  height: 20px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n\n"]);
+  var data = _taggedTemplateLiteral(["\n  border: 1px solid orange;\n  width: 20px;\n  height: 20px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n\n"]);
 
   _templateObject7 = function _templateObject7() {
     return data;
@@ -116,7 +116,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  width: 100%;\n  margin-bottom: 10px;\n  /* border: 1px solid blue; */\n  display: flex;\n  flex-wrap: no-wrap;\n  position: relative;\n"]);
+  var data = _taggedTemplateLiteral(["\n  width: 100%;\n  margin-bottom: 10px;\n  display: flex;\n  flex-wrap: no-wrap;\n  position: relative;\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -216,7 +216,7 @@ var _default = function _default(_ref) {
     onClick: function onClick() {
       return toggleInKeyOnly(!inKeyOnly);
     }
-  }, " In Key only "), chordMenu))), _react["default"].createElement(Row, null, !changeOpen && !addOpen ? _react["default"].createElement(AddButtonWrapper, null, _react["default"].createElement(AddButton, {
+  }, "In Key only"), chordMenu))), _react["default"].createElement(Row, null, !changeOpen && !addOpen ? _react["default"].createElement(AddButtonWrapper, null, _react["default"].createElement(AddButton, {
     onClick: function onClick() {
       return toggleAdd(true);
     }

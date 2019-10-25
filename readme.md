@@ -1,9 +1,22 @@
-to run all the modules:
+# Chord Sketcher
 
-from the root:
+:rotating_light: **!WORK IN PROGRESS!**	:rotating_light:
+
+ This repo is a collections of modules for creating applications for users to explore and experiment with chord progressions.
+
+ please checkout the [projects](https://github.com/augustinevt/song_sketcher/projects) for state of development.
+
+ :fire:_Want to collaborate!?_:fire:
+
+ Contact me, @augustinevt!
+
+
+## Developing the Chord Sketcher
+
+### From the root dir...
 
 ```
-cd devApp
+cd chords_generator
 ```
 ```
 npm i
@@ -14,10 +27,10 @@ npm link
 ```
 npm run dev
 ```
-moo
+### Then...
 
 ```
-cd devApp
+cd chord_generator_ui
 ```
 ```
 npm i
@@ -29,14 +42,16 @@ npm link
 npm run dev
 ```
 
-moo
-
+### Then...
 
 ```
 cd devApp
 ```
 ```
-npm i
+npm link chord-generator
+```
+```
+npm link chord-sketch-ui
 ```
 ```
 npm start
